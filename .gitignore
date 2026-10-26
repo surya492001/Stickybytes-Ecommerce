@@ -1,0 +1,20 @@
+# Ignore everything at the root
+/*
+
+# Include the two projects
+!/Stickybytes/
+!/Backend/
+
+# Include Git configuration
+!/.gitignore
+
+# Ignore generated and sensitive files anywhere
+**/node_modules/
+**/dist/
+**/build/
+**/bin/
+**/obj/
+**/.env
+**/.env.*
+!**/.env.example
+**/.DS_Store
