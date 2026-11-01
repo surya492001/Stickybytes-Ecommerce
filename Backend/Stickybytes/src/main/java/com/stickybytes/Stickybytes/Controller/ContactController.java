@@ -2,6 +2,7 @@ package com.stickybytes.Stickybytes.Controller;
 
 import com.stickybytes.Stickybytes.dto.ContactRequestDto;
 import com.stickybytes.Stickybytes.service.impl.IContactService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.health.actuate.endpoint.HttpCodeStatusMapper;
 import org.springframework.http.HttpStatus;
@@ -23,7 +24,7 @@ public class ContactController
 
     @PostMapping
     public ResponseEntity<String> saveContact(
-             @RequestBody ContactRequestDto contactRequestDto) {
+            @Valid @RequestBody ContactRequestDto contactRequestDto) {
         iContactService.saveContact(contactRequestDto);
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body("Request processed successfully");
