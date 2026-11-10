@@ -79,8 +79,7 @@ Stripe is integrated to handle the payment checkout process.
            MySQL        Stripe
            Docker       Checkout
 ```
-![Uploading image.png…]()
-
+<img width="2932" height="1538" alt="image" src="https://github.com/user-attachments/assets/8fd90754-9790-4271-8194-062d5566d882" />
 
 ## 📁 Project Structure
 
