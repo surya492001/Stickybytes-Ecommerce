@@ -1,8 +1,7 @@
-import React, { useMemo, useState } from "react";
+import React, { useState, useMemo } from "react";
 import ProductCard from "./ProductCard";
 import SearchBox from "./SearchBox";
-import Dropdown from "./dropdown";
-import { parse } from "@fortawesome/fontawesome-svg-core";
+import Dropdown from "./Dropdown";
 
 const sortList = ["Popularity", "Price Low to High", "Price High to Low"];
 
@@ -64,7 +63,7 @@ export default function ProductListings({ products }) {
             <ProductCard key={product.productId} product={product} />
           ))
         ) : (
-          <p className="text-center font-primary font-bold text-lg text-primary">
+          <p className="text-center font-primary font-bold text-lg text-primary dark:text-light">
             No products found
           </p>
         )}

@@ -23,7 +23,10 @@ export default function Home() {
 export async function productsloader() {
   try {
     const response = await apiClient.get("/products");
-    return response.data;
+    return response.data.map((product) => ({
+      ...product,
+      productId: product.productId ?? product.productid ?? product.id,
+    }));
   } catch (error) {
     throw new Response(
       error.response?.data?.errorMessage ||

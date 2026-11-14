@@ -19,6 +19,10 @@ import ErrorPage from "./components/ErrorPage.jsx";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ProductDetail from "./components/ProductDetail.jsx";
+import { CartContext } from "./store/cart-context.jsx";
+import { CartProvider } from "./store/cart-context.jsx";
+
+import { faSquareKickstarter } from "@fortawesome/free-brands-svg-icons";
 
 const routedefinition = createRoutesFromElements(
   <Route path="/" element={<App />} errorElement={<ErrorPage />}>
@@ -36,7 +40,9 @@ const approuter = createBrowserRouter(routedefinition);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={approuter} />
+    <CartProvider>
+      <RouterProvider router={approuter} />
+    </CartProvider>
     <ToastContainer
       position="top-center"
       autoClose={3000}
